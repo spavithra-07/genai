@@ -8,7 +8,7 @@ load_dotenv()
 app=Flask(__name__)
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 model=genai.GenerativeModel("gemini-2.5-flash")
-df=pd.read_csv("qa_data (1)(1).csv")
+df=pd.read_csv("qa_data (1).csv")
 context_text=""
 for _, row in df.iterrows():
     context_text += f"Q:{row['question']}\nA:{row['answer']}\n"
